@@ -1,0 +1,7 @@
+{
+  "name": "filelock",
+  "classPath": "src",
+  "dependencies": {
+      "tink_core": ""
+  }
+}

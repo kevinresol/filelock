@@ -1,0 +1,28 @@
+sudo: required
+dist: trusty
+
+language: haxe
+
+os:
+  - linux
+  - osx
+  
+haxe:
+  - "3.2.1"
+  - development
+  
+matrix:
+  allow_failures:
+    - haxe: "3.2.1"
+    
+install:
+  - haxelib install travix
+  - haxelib run travix install
+
+script:
+  - rm -f test.txt* && haxelib run travix python
+  - rm -f test.txt* && haxelib run travix node
+  - rm -f test.txt* && haxelib run travix php
+  - rm -f test.txt* && haxelib run travix java
+  # - rm -f test.txt* && haxelib run travix cs # not working, to be investigated
+
