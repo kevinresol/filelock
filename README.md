@@ -4,7 +4,7 @@ Lock a file and prevents it from being accessed by others
 
 ## Targets
 
-At the moment only Python, Java, NodeJS & PHP.
+At the moment only C++, Python, Java, NodeJS & PHP.
 But should be extendable to other targets.
 
 ## Usage
