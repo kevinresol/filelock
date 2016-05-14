@@ -12,7 +12,6 @@ class RunTests extends BuddySuite {
 	static inline var TEST_FILE = 'test.txt';
 	
 	static function main() {
-		trace("entry point");
 		var reporter = new buddy.reporting.ConsoleReporter();
 		
 		var runner = new buddy.SuitesRunner([
@@ -20,18 +19,13 @@ class RunTests extends BuddySuite {
 		], reporter);
 		
 		runner.run().then(function(_) {
-			trace('ended');
 			Sys.exit(runner.failed() ? 500 : 0);
 		});
-		
-		trace('wtf');
 	}
 	
 	public function new() {
 		describe("Test File Lock", {
-			trace('describe');
 			it("should lock and release", function(done) {
-				trace('it');
 				TEST_FILE.saveContent('1');
 				
 				FileLock.lock(TEST_FILE).handle(function(o) switch o {
