@@ -60,6 +60,9 @@ class FileLockObject {
 						var fd = CppIo.open(lockFilePath, 0x0200 | 0x0800 | 0x0002); // O_CREAT | O_EXCL | O_RDWR
 						if(fd == -1) throw "Cannot create lock file";
 						CppIo.close(fd);
+					#elseif neko
+						var handle = file_open(untyped lockFilePath.__s, untyped 'wx'.__s);
+						file_close(handle);
 					#end
 						
 					cb(Success(Noise));
@@ -81,6 +84,11 @@ class FileLockObject {
 	}
 	
 	inline function get_lockFilePath() return '$path.lock';
+	
+	#if neko
+	static var file_close = neko.Lib.load("std","file_close",1);
+	static var file_open = neko.Lib.load("std","file_open",2);
+	#end
 }
 
 #if cpp
