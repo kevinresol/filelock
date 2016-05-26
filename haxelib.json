@@ -1,7 +1,14 @@
 {
   "name": "filelock",
+  "url": "https://github.com/kevinresol/filelock",
+  "license": "MIT",
   "classPath": "src",
+  "description": "Lock a file from concurrent access",
+  "releasenote": "Experimental release",
+  "version": "0.1.0",
+  "tags": ["file", "lock", "concurrent"],
+  "contributors": ["kevinresol"],
   "dependencies": {
-      "tink_core": ""
+    "tink_core": ""
   }
 }

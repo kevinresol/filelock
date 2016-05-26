@@ -13,7 +13,7 @@ But should be extendable to other targets.
 FileLock.lock('my_file.txt').handle(function(o) switch o {
 	case Success(lock):
 		// do your work here
-		lock.unlock;
+		lock.unlock();
 	case Failure(err):
 		trace(err)
 });
