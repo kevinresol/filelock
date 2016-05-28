@@ -1,6 +1,6 @@
 # filelock
 
-Lock a file and prevents it from being accessed by others
+A little utility that helps preventing concurrent access of a file.
 
 ## Targets
 
@@ -27,3 +27,7 @@ If the `.lock` file already exists, it means that the file has been locked by so
 the specified number of retries reached.
 
 Note that the original file is NOT actually locked from any read/write operation.
+
+## TODO
+
+Staled/expired lock
