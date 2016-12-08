@@ -4,8 +4,9 @@ A little utility that helps preventing concurrent access of a file.
 
 ## Targets
 
-At the moment only C++, Python, Java, NodeJS & PHP.
-But should be extendable to other targets.
+Currently supports python, nodejs, php, java, c#, c++, neko. 
+
+Support for other platform? PR please =)
 
 ## Usage
 
